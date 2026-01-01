@@ -1,0 +1,7 @@
+version: '3.8' services: medplum: image: medplum/medplum-server:latest ports: - "5000:5000" environment: - MEDPLUM_DB_URL=postgres://postgres:password@db:5432/medplum - MEDPLUM_REDIS_URL=redis://redis:6379 depends_on: - db - redis
+
+db: image: postgres:15 environment: - POSTGRES_PASSWORD=password - POSTGRES_DB=medplum volumes: - pgdata:/var/lib/postgresql/data
+
+jitsi: image: jitsi/web:latest ports: - "8443:443" environment: - PUBLIC_URL=https://jitsi.staqlt-telemed.com
+
+volumes: pgdata:
