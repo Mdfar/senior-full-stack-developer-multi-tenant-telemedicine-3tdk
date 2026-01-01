@@ -1,0 +1,1 @@
+{ "resourceType": "AccessPolicy", "name": "Clinic-Tenant-Policy", "compartment": { "reference": "Organization/{{CLINIC_ID}}" }, "resource": [ { "resourceType": "Patient", "criteria": "Organization={{CLINIC_ID}}" }, { "resourceType": "Encounter", "criteria": "Organization={{CLINIC_ID}}" }, { "resourceType": "Observation", "criteria": "Organization={{CLINIC_ID}}" } ] }
